@@ -22,7 +22,7 @@ const createTokenSendResponse = (user, res, next) => {
         username: user.username
     };
 
-    webToken.sign(payload, process.env.TOKEN_SECRET, {
+    webToken.sign(payload, "mysecret", {
         expiresIn: '1d'
     }, (err, token) => {
         if (err) {
@@ -99,7 +99,7 @@ router.post('/login', (req, res, next) => {
                            _id: user._id,
                            username: user.username,
                        };
-                       webToken.sign(payload, process.env.TOKEN_SECRET, {
+                       webToken.sign(payload, "mysecret", {
                            expiresIn: '1d'
                        }, (err, token) => {
                            if (err) {
