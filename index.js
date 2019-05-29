@@ -7,7 +7,7 @@ const express = require("express");
 const volleyball = require("volleyball");
 const bcrypt = require("bcryptjs");
 const cors = require("cors");
-
+const middlewares = require("./auth/middlewares");
 
 //const bodyParser = require('body-parser');
 
