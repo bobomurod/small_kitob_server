@@ -6,7 +6,7 @@ function checkTokenSetUser(req, res, next) {
     const token = authHeader.split(" ")[1];
     console.log(token);
     if (token) {
-      webToken.verify(token, process.env.TOKEN_SECRET, (err, user) => {
+      webToken.verify(token, "mysecret", (err, user) => {
         if(err){
           console.log(err);
         } else {
